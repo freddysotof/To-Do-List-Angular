@@ -1,0 +1,20 @@
+<div class="container">
+
+    <form (submit)="addNewTodo()">
+        <div class="form-group">
+            <input placeholder="Agrgear Tu Tarea" [(ngModel)]="description" type="text" class="form-control" name="description">
+
+        </div>
+        <input type="submit" class="btn btn-primary" value="Agregar Tarea">
+    </form>
+    <br>
+    <ul class="list-group">
+
+        <li class="list-group-item" *ngFor="let todo of todos">
+            <mat-slide-toggle color="primary" [(ngModel)]="isDone" (change)="openDialog()" name="isDone"> {{todo.description}} </mat-slide-toggle>
+
+        </li>
+
+    </ul>
+
+</div>
